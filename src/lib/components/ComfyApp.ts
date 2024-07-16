@@ -197,7 +197,7 @@ export default class ComfyApp {
 
         await this.loadConfig();
 
-        this.api.hostname = get(configState).comfyUIHostname
+        this.api.hostname = import.meta.env.VITE_COMFYUI_HOST || get(configState).comfyUIHostname
         this.api.port = get(configState).comfyUIPort
 
         this.setupColorScheme()
